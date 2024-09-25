@@ -9,21 +9,6 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [theme, setTheme] = useState('light');
 
-  useEffect(() => {
-    // Get theme from localStorage on initial render
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Save theme to localStorage whenever it changes
-    localStorage.setItem('theme', theme);
-
-    // Update the body class to reflect the theme
-    document.body.className = theme;
-  }, [theme]);
 
   const toggleDarkMode = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
