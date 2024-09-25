@@ -8,14 +8,12 @@ export default function Hero() {
   return (
     <section className="py-14 min-h-screen flex items-center ">
 
-    <div className="grid grid-cols-1 sm:grid-cols-12  w-full ">
+    <div className="grid grid-cols-1 sm:grid-cols-12  w-full text-black dark:text-white ">
         <div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
           >
-          <h1 className="text-black  text-3xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold">
+          <h1 className="  text-3xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className=" bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
@@ -36,19 +34,19 @@ export default function Hero() {
               repeat={Infinity}
               />
           </h1>
-          <p className="text-black text-base sm:text-lg mb-6 lg:text-xl">
+          <p className=" text-base sm:text-lg mb-6 lg:text-xl">
           Crafting dynamic, user-centric web experiences with React—building fast, scalable, and visually engaging interfaces.
           </p>
           <div>
             <Link
               href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-red-500 text-white hover:bg-red-600 mb-4 sm:mb-0"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-lg mr-4 border-2 border-red-500 bg-red-500 text-white hover:bg-red-600 mb-4 sm:mb-0"
               >
-              Hire Me
+             Learn More
             </Link>
             <Link
               href="/"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full bg-red-500 text-white hover:bg-red-600"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-lg border-2 border-red-500 text-red-500 bg-mainBg hover:bg-[#e5e5e5] "
             >
               
                 Download CV
