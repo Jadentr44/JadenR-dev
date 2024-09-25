@@ -7,18 +7,27 @@ import Projects from "./components/Projects.jsx";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const storedTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState(storedTheme?storedTheme:"light");
-
-
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    // Get theme from localStorage on initial render
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save theme to localStorage whenever it changes
+    localStorage.setItem('theme', theme);
+
+    // Update the body class to reflect the theme
+    document.body.className = theme;
   }, [theme]);
 
-  function toggleDarkMode() {
-    setTheme(theme === "light" ? "dark" : "light");
-  }
+  const toggleDarkMode = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <main
