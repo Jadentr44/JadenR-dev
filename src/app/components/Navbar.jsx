@@ -1,6 +1,8 @@
 import React from "react";
 import Menu from "./icons/Menu";
-export default function navbar({ toggle, theme }) {
+import { useTheme } from "next-themes";
+export default function navbar() {
+  const { theme, setTheme } = useTheme()
   const name = "Jaden";
   return (
     <nav className="fixed top-0 left-0 right-0 bg-mainBg dark:bg-gray-600 dark:text-white z-10">
@@ -38,7 +40,7 @@ export default function navbar({ toggle, theme }) {
           <label className="relative flex items-center cursor-pointer">
             <input
               id="darkToggle"
-              onChange={() => toggle()}
+              onChange={() => setTheme(theme==="light"?"dark":"light")}
               type="checkbox"
               checked={theme === "dark" ? true : false}
               value=""
